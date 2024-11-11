@@ -13,18 +13,10 @@ public class TrackPage {
     // локатор для изображения "Такого заказа нет"
     private By noSuchOrderImage = By.xpath(".//div[contains(@class,'Track_NotFound')]/img");
 
-    //локатор для кнопки "Посмотреть"
-    private By statusOrderMainButton = By.xpath(".//button[text()='Посмотреть']");
-
     public TrackPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    // ожидание загрузки страницы "Статус заказа"
-    public void waitForLoadTrackPage(){
-        new WebDriverWait(driver, Duration.ofSeconds(6)).
-                until(ExpectedConditions.visibilityOfElementLocated(statusOrderMainButton));
-    }
     // ожидание загрузки изображения "Такого заказа нет"
     public void waitForLoadNoSuchOrderImage(){
         new WebDriverWait(driver, Duration.ofSeconds(6)).
